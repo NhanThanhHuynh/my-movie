@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 > Please record screen to a GIF file and attach link here
-- [x] https://drive.google.com/file/d/1lcoCDgjR2T3IYNI6uXOaIPhMgGgZ7Sig/view?usp=sharing
+- [Link record ](https://drive.google.com/file/d/1lcoCDgjR2T3IYNI6uXOaIPhMgGgZ7Sig/view?usp=sharing)
 
 ## License
 
