@@ -59,6 +59,7 @@ function MovieList({ type, isHide, setIsHide }) {
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                                     alt={movie.title}
                                     className="card-img-top"
+                                    onClick={() => handleGoToDetailMovie(movie.id)}
                                 />
                                 <Card.Body>
                                     <Card.Title className="text-primary" onClick={() => handleGoToDetailMovie(movie.id)}>{movie.title}</Card.Title>
