@@ -2,7 +2,7 @@
 
 **Movies** is a movies app using the [The Movie Database API](https://developers.themoviedb.org/3).
 
-Time spent: **HH** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
