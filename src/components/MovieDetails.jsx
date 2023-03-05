@@ -18,7 +18,7 @@ function MovieDetails() {
             setError(null);
             try {
                 const response = await axios.get(
-                    `https://api.themoviedb.org/3/movie/${id}?api_key=d2d2d2407deeab4037f6ea65a7f19160`
+                    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
                 );
                     console.log(movie,'movie in detail')
                 setMovie(response.data);
