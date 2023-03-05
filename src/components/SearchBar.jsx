@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
-function SearchBar() {
+function SearchBar({setIsHide}) {
     const [query, setQuery] = useState('');
     const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         history.push(`/search/${ query }`);
+        setIsHide(true)
     };
 
     return (

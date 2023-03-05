@@ -3,11 +3,13 @@ import axios from 'axios';
 import { Row, Col, Card } from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Skeleton from 'react-loading-skeleton';
+import { useHistory } from 'react-router-dom';
 
-function MovieList({ type }) {
+function MovieList({ type, isHide, setIsHide }) {
     const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const history = useHistory()
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -29,9 +31,14 @@ function MovieList({ type }) {
         fetchMovies();
     }, [type]);
 
+    const handleGoToDetailMovie = (id) => {
+        history.push(`/movie/${id}`)
+        setIsHide(true)
+    }
+
     return (
         <>
-            {isLoading && (
+            {isLoading && !isHide && (
                 <Row>
                     {[...Array(20)].map((_, index) => (
                         <Col key={index} xs={12} sm={6} md={4} lg={3}>
@@ -42,7 +49,7 @@ function MovieList({ type }) {
             )}
             {error && <div>{error}</div>}
 
-            {!isLoading && !error && (
+            {!isLoading && !error && !isHide &&  (
                 <Row>
                     {movies.map((movie) => (
                         <Col key={movie.id} xs={12} sm={6} md={4} lg={3}>
@@ -54,7 +61,7 @@ function MovieList({ type }) {
                                     className="card-img-top"
                                 />
                                 <Card.Body>
-                                    <Card.Title>{movie.title}</Card.Title>
+                                    <Card.Title className="text-primary" onClick={() => handleGoToDetailMovie(movie.id)}>{movie.title}</Card.Title>
                                 </Card.Body>
                             </Card>
                         </Col>

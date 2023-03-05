@@ -6,7 +6,7 @@ import Loading from './Loading';
 import Error from './Error';
 import { searchMovies } from '../api';
 
-function SearchResults() {
+function SearchResults({ setIsHide }) {
   const { query } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,7 +44,7 @@ function SearchResults() {
       <h2>Search results for "{query}"</h2>
       <Row xs={1} sm={2} md={3} lg={4} xl={5} xxl={6}>
         {movies.map((movie) => (
-          <Col key={movie.id}>
+          <Col key={movie.id} xs={6} sm={6} md={4} lg={6} xl={6} xxl={6}>
             <MovieCard movie={movie} />
           </Col>
         ))}
